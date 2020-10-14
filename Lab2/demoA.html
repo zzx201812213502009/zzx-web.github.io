@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实验A</title>
+	    <!-- 顶点着色器和片元着色器代码 -->
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 a_Position;
+			void main(){
+				gl_Position = a_Position;
+			}
+		</script>
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+			void main(){
+				gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+			}
+		</script>
+		<!-- 相关的JS库 -->
+		<script type="text/javascript" src="common/webgl-utils.js"></script>
+		<script type="text/javascript" src="common/initShaders.js"></script>
+		<script type="text/javascript" src="common/gl-matrix-min.js"></script>
+		<!-- 三角形的JS代码 -->
+		<script type="text/javascript" src="js/gasket_triangle.js"></script>
+	</head>
+	<body>
+		<p>输入剖分层次（0~7）：</p>
+		<p>
+		<input type="text" id="numinput" value=""/>
+		<input type="button" onclick="init()" value="Draw"/>
+		<input type="button" value="Clear" onclick="location.reload()"/>
+		</p>
+		<canvas id="triangle-canvas" style="border:none;" width="400" height="400"></canvas>
+	</body>
+</html>

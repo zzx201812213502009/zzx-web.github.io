@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>实验C</title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+	attribute vec4 a_Position;
+	void main(){
+		gl_Position = a_Position;
+    }
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	void main(){
+		gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+	}
+    </script>
+    
+    <script type="text/javascript" src="common/webgl-utils.js"></script>
+    <script type="text/javascript" src="common/initShaders.js"></script>
+    <script type="text/javascript" src="common/gl-matrix-min.js"></script>
+    
+    <script type="text/javascript" src="js/gasket_trianglewire.js"></script>
+</head>
+<body>
+	<p>输入剖分层次（0~7）：</p>
+	<p>
+    <input type="text" id="num" value=""/>
+	<input type="button" value="Draw" onclick="initTriangles()"/>
+	<input type="button" value="Clear" onclick="location.reload()"/>
+	</p>
+    <canvas id="gl-canvas" width="400" height="400">你的浏览器不支持HTML5 canvas元素</canvas>
+</body>
+</html>
