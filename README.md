@@ -12,3 +12,7 @@
 [Lab5](./Lab5/lab5index.html)
 ### 第6章
 [Lab6](./Lab6/lab6index.html)
+### 第7章
+[Lab7](./Lab7/lab7index.html)
+### 课程设计
+[课程设计](./课程设计/index.html)
