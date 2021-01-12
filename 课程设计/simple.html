@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>简单</title>
+<STYLE>
+A.cOn {text-decoration:none;font-weight:bolder}
+#article {font: 12pt Verdana, geneva, arial, sans-serif; background: white; color: black; padding: 10pt 15pt 0 5pt}
+#article P.start {text-indent: 0pt}
+#article P {margin-top:0pt;font-size:10pt;text-indent:12pt}
+#article #author {margin-bottom:5pt;text-indent:0pt;font-style: italic}
+#pageList P {padding-top:10pt}
+#article H3 {font-weight:bold}
+#article DL, UL, OL {font-size: 10pt}
+#board TD {width: 15pt; height: 15pt; font-size: 2pt; }
+TD.foot {font-size: 10pt;}
+#board TD.start {font-size: 8pt; border-left: 2px black solid; background:yellow; border-top: 2px black solid;text-align: center; color: red}
+#board TD.end {font-size: 8pt; text-align: center; color: green}
+#message {margin: 0pt; padding: 0pt; text-align: center}
+</STYLE>
+<script type="text/javascript" src="js/game1.js"></script>
+</head>
+<body>
+<P ALIGN=center>请使用键盘上的→←↑↓键进行游戏</P><BR>
+<p><TABLE ID=board ALIGN=CENTER CELLSPACING=0 CELLPADDING=0>
+<SCRIPT LANGUAGE="JavaScript">
+for (var row = 0; row<maze.length; row++) {
+document.write("<TR>")
+for (var col = 0; col<maze[row][0].length; col++) {
+document.write("<TD STYLE='")
+for (var cell = 0; cell<2; cell++) {
+if (maze[row][cell][col]==1)
+document.write(sides[cell]+": 2px black solid;")
+}
+if ((0==col) && (0!=row))
+document.write("border-left: 2px black solid;")
+if (row==maze.length-1)
+document.write("border-bottom: 2px black solid;")
+if ((0==row) && (0==col))
+document.write(" background-color:yellow;' class=start>start</TD>")
+else
+if ((row==maze.length-1) && (col==maze[row][0].length-1))
+document.write("' class=end>end</TD>")
+else
+document.write("'> </TD>")
+}
+document.write("</TR>")
+}
+var start = new Object
+start.rows = 0
+start.cols = 0
+progress=true
+document.onkeydown = moveIt;
+</SCRIPT>
+</TABLE>
+<P ID="message"> </P>
+<br />
+</body>
+</html>
+
