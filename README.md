@@ -9,7 +9,7 @@
 ### 第4章
 [Lab4](./Lab4/lab4index.html)
 ### 第5章
-[Lab5](./Lab5/lab5index.html)
+[Lab5](./Lab5/Lab5.html)
 ### 第6章
 [Lab6](./Lab6/Lab6.html)
 ### 第7章
